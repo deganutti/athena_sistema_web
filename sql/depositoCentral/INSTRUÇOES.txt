@@ -1,0 +1,6 @@
+Deve ser executado 1º: src_verificar_artmovimento(integer, integer)_editado.sql
+Deve ser executado 2º: public.src_recalcular_estoque_w.sql
+Por ultimo o mais demorado: SRC_W_REFAZENDO_Art.sql
+(aqui em nosso servidor, tempo medio foi de 2 horas e 32 minutos)
+
+ATENDIMENTO 169851 DE ORIGEM COM SUPORTE LUIZ X ANALISTA WELLINTON.

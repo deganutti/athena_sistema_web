@@ -1,0 +1,6 @@
+CPF/CNPJ : 03282836651    Duplicados: 2
+CPF/CNPJ : 75156938949    Duplicados: 2
+CPF/CNPJ : 05359841974    Duplicados: 2
+CPF/CNPJ : 87546175968    Duplicados: 2
+CPF/CNPJ : 96535946991    Duplicados: 2
+CPF/CNPJ : 25871812830    Duplicados: 2
