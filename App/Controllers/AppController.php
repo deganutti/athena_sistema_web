@@ -14,10 +14,9 @@ class AppController extends Action
 
         session_start();
 
-        if (!isset($_SESSION['id']) || $_SESSION['id'] == '' || !isset($_SESSION['nome']) || $_SESSION['nome'] == '') {
+        if (!isset($_SESSION['id_usuario']) || $_SESSION['id_usuario'] == '' || !isset($_SESSION['nome']) || $_SESSION['nome'] == '') {
             header('Location: /?login=erro');
         }
-
     }
 
     public function dashboard()
@@ -35,7 +34,6 @@ class AppController extends Action
         $this->view->dupCli = $dupCli->cliDuplicado();
 
         $this->render('dashboard');
-
     }
 
     public function databases()
@@ -54,11 +52,10 @@ class AppController extends Action
             $this->view->newDb = $newDb;
 
             header('Location: /novabase');
-        } catch (\Throwable$th) {
+        } catch (\Throwable $th) {
             //throw $th;
             header('Location: /?novabase=' . $th);
         }
-
     }
 
     public function newDatabasePG()
@@ -66,7 +63,6 @@ class AppController extends Action
         $bd = Container::getModel('Dashboard');
         $this->view->bd = $bd->getAll();
         header('Location: /novabase');
-
     }
 
     public function funcaoTabelas()
@@ -90,10 +86,9 @@ class AppController extends Action
             $this->view->ajustes = $estoque;
 
             header('Location: /ajustes');
-        } catch (\Throwable$th) {
+        } catch (\Throwable $th) {
             header('Location: /?ajustes=erro');
         }
-
     }
     public function tabelaArtPrind()
     {
@@ -105,10 +100,9 @@ class AppController extends Action
             $this->view->artPrind = $artPrind;
 
             header('Location: /ajustes');
-        } catch (\Throwable$th) {
+        } catch (\Throwable $th) {
             header('Location: /?ajustes=prind');
         }
-
     }
     public function tabelaArtBloqueio()
     {
@@ -123,7 +117,6 @@ class AppController extends Action
         } catch (\Throwable $th) {
             header('Location: /?ajustes=artBloqueio');
         }
-
     }
 
     public function compararProdutos()
@@ -180,5 +173,3 @@ class AppController extends Action
         }
     }
 }
-
-

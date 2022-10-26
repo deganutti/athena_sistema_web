@@ -4,14 +4,16 @@ namespace App;
 
 use MF\Init\Bootstrap;
 
-class Route extends Bootstrap {
+class Route extends Bootstrap
+{
 
-	protected function initRoutes() {
+	protected function initRoutes()
+	{
 
 		$routes['home'] = array(
 			'route' => '/',
-			'controller' => 'indexController',
-			'action' => 'index'
+			'controller' => 'AuthController',
+			'action' => 'getAll'
 		);
 		$routes['autenticar'] = array(
 			'route' => '/autenticar',
@@ -31,7 +33,7 @@ class Route extends Bootstrap {
 		/**
 		 * Criar banco de dados
 		 * 12-01-2021
-		*/
+		 */
 		$routes['novabase'] = array(
 			'route' => '/novabase',
 			'controller' => 'AppController',
@@ -53,43 +55,40 @@ class Route extends Bootstrap {
 			'action' => 'funcaoTabelas'
 		);
 		$routes['estoque'] = array(
-			'route'=>'/estoque',
+			'route' => '/estoque',
 			'controller' => 'AppController',
 			'action' => 'criaEstoqueZero'
 		);
 		$routes['artprind'] = array(
-			'route'=>'/artprind',
+			'route' => '/artprind',
 			'controller' => 'AppController',
 			'action' => 'tabelaArtPrind'
 		);
 		$routes['artbloqueio'] = array(
-			'route'=>'/artbloqueio',
+			'route' => '/artbloqueio',
 			'controller' => 'AppController',
 			'action' => 'tabelaArtBloqueio'
 		);
 		$routes['comparar'] = array(
-			'route'=>'/comparar',
+			'route' => '/comparar',
 			'controller' => 'AppController',
 			'action' => 'compararProdutos'
 		);
 		$routes['movped'] = array(
-			'route'=>'/movped',
-			'controller'=>'AppController',
-			'action'=>'getmovart'
+			'route' => '/movped',
+			'controller' => 'AppController',
+			'action' => 'getmovart'
 		);
 		$routes['movfincab'] = array(
-			'route'=>'/movfincab',
-			'controller'=>'AppController',
-			'action'=>'setmovfincab'
+			'route' => '/movfincab',
+			'controller' => 'AppController',
+			'action' => 'setmovfincab'
 		);
 		$routes['movfincor'] = array(
-			'route'=>'/movfincor',
-			'controller'=>'AppController',
-			'action'=>'setmovfincor'
+			'route' => '/movfincor',
+			'controller' => 'AppController',
+			'action' => 'setmovfincor'
 		);
 		$this->setRoutes($routes);
 	}
-
 }
-
-?>

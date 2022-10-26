@@ -12,9 +12,9 @@ class IndexController extends Action
     {
         $this->view->login = isset($_GET['login']) ? $_GET['login'] : '';
 
-        $bd = Container::getModel('Dashboard');
-		$this->view->bd = $bd->getAll();
-		
+        $bd = Container::getModel('usuario');
+        $this->view->bd = $bd->getAll();
+
         $this->render('index');
     }
 }
