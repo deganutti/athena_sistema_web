@@ -155,7 +155,15 @@ create table conta(
 	constraint pk_conta primary key(id_conta)
 );
 -- athena_db.financeiro definition
+-- athena_db.tipo_financeiro definition
 
+CREATE TABLE `tipo_financeiro` (
+  `id_tipo_financeiro` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(250) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_tipo_financeiro`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 CREATE TABLE financeiro (
   id_empresa int(11) NOT NULL,
   id_pessoa int(11) NOT NULL,
