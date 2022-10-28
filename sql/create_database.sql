@@ -186,3 +186,33 @@ CREATE TABLE financeiro (
   CONSTRAINT fk_usuario_insert_financeiro FOREIGN KEY (id_usuario_insert) REFERENCES usuario (id_usuario),
   CONSTRAINT fk_usuario_update_financeiro FOREIGN KEY (id_usuario_update) REFERENCES usuario (id_usuario)
 );
+-- athena_db.movimento_financeiro definition
+
+CREATE TABLE `movimento_financeiro` (
+  `id_empresa` int(11) NOT NULL,
+  `id_movimento` int(11) NOT NULL AUTO_INCREMENT,
+  `id_financeiro` int(11) NOT NULL,
+  `id_conta` int(11) NOT NULL,
+  `dt_movimento` date NOT NULL,
+  `valor` double NOT NULL,
+  `valor_desconto` double DEFAULT '0',
+  `valor_acrecimo` double DEFAULT '0',
+  `valor_juros` double DEFAULT '0',
+  `valor_multa` double DEFAULT '0',
+  `situacao` int(11) DEFAULT '1',
+  `id_usuario_insert` int(11) DEFAULT NULL,
+  `id_usuario_update` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_movimento`),
+  KEY `fk_usuario_insert_movimento_financeiro` (`id_usuario_insert`),
+  KEY `fk_usuario_update_movimento_financeiro` (`id_usuario_update`),
+  KEY `fk_empresa_movimento_financeiro` (`id_empresa`),
+  KEY `fk_financeiro_movimento_financeiro` (`id_financeiro`),
+  KEY `fk_conta_movimento_financeiro` (`id_conta`),
+  CONSTRAINT `fk_conta_movimento_financeiro` FOREIGN KEY (`id_conta`) REFERENCES `conta` (`id_conta`),
+  CONSTRAINT `fk_empresa_movimento_financeiro` FOREIGN KEY (`id_empresa`) REFERENCES `empresa` (`id_empresa`),
+  CONSTRAINT `fk_financeiro_movimento_financeiro` FOREIGN KEY (`id_financeiro`) REFERENCES `financeiro` (`id_financeiro`),
+  CONSTRAINT `fk_usuario_insert_movimento_financeiro` FOREIGN KEY (`id_usuario_insert`) REFERENCES `usuario` (`id_usuario`),
+  CONSTRAINT `fk_usuario_update_movimento_financeiro` FOREIGN KEY (`id_usuario_update`) REFERENCES `usuario` (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

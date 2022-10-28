@@ -12,8 +12,8 @@ class Route extends Bootstrap
 
 		$routes['home'] = array(
 			'route' => '/',
-			'controller' => 'AuthController',
-			'action' => 'getAll'
+			'controller' => 'IndexController',
+			'action' => 'index'
 		);
 		$routes['autenticar'] = array(
 			'route' => '/autenticar',

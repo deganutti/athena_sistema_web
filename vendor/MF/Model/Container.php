@@ -12,15 +12,7 @@ class Container {
 
 		return new $class($conn);
 	}
-	public static function getModelMs($model){
-		$class = "\\App\\Models\\".ucfirst($model);
-		$mssql = Connection::getDbMS();
-
-		return new $class($mssql);
-	}
+ 
 
 	
 }
-
-
-?>

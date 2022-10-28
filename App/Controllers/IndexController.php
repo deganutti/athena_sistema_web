@@ -15,6 +15,11 @@ class IndexController extends Action
         $bd = Container::getModel('usuario');
         $this->view->bd = $bd->getAll();
 
+        $empresa = Container::getModel('empresas');
+        $this->view->empresa = $empresa->getAll();
+
+
+
         $this->render('index');
     }
 }

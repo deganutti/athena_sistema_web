@@ -1,10 +1,51 @@
 <div class="content">
-    <div class="row">
-        <p>Selecione a opção lateral para dar inicio a importação dos dados.</p>
-        <center>
-            <iframe
-                sc="https://docs.google.com/forms/d/e/1FAIpQLSe1seqrPoUdUyvstl7zbUaB5ty2j8yKX17d61Oof_gbgiB7RA/viewform?embedded=true"
-                width="640" height="2402" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
-        </center>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 center">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Olá Seja Bem Vindo.</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="/autenticar">
+                            <div class="row">
+                                <div class="col-md pr-1">
+                                    <div class="form-group">
+                                        <label>Empresa</label>
+                                        <select name="empresa" id="empresa" class="form-control">
+                                            <option value='' id="">Selecione</option>
+                                            <?php foreach ($this->view->empresa as $id => $empresa) { ?>
+                                                <option value='<?= $empresa['id_empresa'] ?>' id='<?= $empresa['id_empresa'] ?>'><?= $empresa['nome'] ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md pr-1">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="email" class="form-control" placeholder="Email" name="email" id="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md pr-1">
+                                    <div class="form-group">
+                                        <label>Senha</label>
+                                        <input type="password" class="form-control" placeholder="Senha" value="" name="senha" id="senha">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md">
+                                    <button type="submit" class="btn btn-info btn-fill pull-right">Login</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
